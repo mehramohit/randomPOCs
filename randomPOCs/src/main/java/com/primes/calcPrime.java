@@ -12,8 +12,20 @@ public class calcPrime implements Callable<ArrayList<Integer>> {
 		this.end = end;
 	}
 
-	public static boolean findFactors(int n) {
+	public static boolean findFactors(int num) {
 
+		if (num > 2 && num % 2 == 0) {
+			return false;
+		}
+
+		int top = (int) Math.sqrt(num) + 1;
+		for (int i = 3; i < top; i += 2) {
+			if (num % i == 0)
+				return false;
+		}
+		return true;
+		
+		/*
 		if (n % 2 == 0)
 			return false;
 		if (n % 3 == 0)
@@ -25,7 +37,7 @@ public class calcPrime implements Callable<ArrayList<Integer>> {
 					return false;
 			}
 		}
-		return true;
+		return true;*/
 	}
 
 	@Override
