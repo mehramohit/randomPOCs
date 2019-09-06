@@ -60,10 +60,10 @@ public class calcPrimeThread implements Runnable {
 		
 		BigInteger top = num.multiply(num).add(BigInteger.ONE);
 		
-		for (int i = 3; i < top; i += 2) {
+	/*	for (int i = 3; i < top; i += 2) {
 			if (num % i == 0)
 				return false;
-		}
+		}*/
 		return true;
 	}
 
