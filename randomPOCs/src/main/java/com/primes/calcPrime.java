@@ -12,6 +12,23 @@ public class calcPrime implements Callable<ArrayList<Integer>> {
 		this.end = end;
 	}
 
+	
+	//1,2,3,4,5,6,7,8,9,10,11
+	//1,3,5,7,9,11
+	//
+	
+	//checks whether an int is prime or not.
+	public static boolean isPrime(int n) {
+	    //check if n is a multiple of 2
+	    if (n%2==0) return false;
+	    //if not, then just check the odds
+	    for(int i=3;i*i<=n;i+=2) {
+	        if(n%i==0)
+	            return false;
+	    }
+	    return true;
+	}
+	
 	public static boolean findFactors(int num) {
 
 		if (num > 2 && num % 2 == 0) {
@@ -59,4 +76,11 @@ public class calcPrime implements Callable<ArrayList<Integer>> {
 		return result;
 	}
 
+	public static void main(String[] args) {
+		
+		findFactors(25);
+		
+		isPrime(25);
+	}
+	
 }
